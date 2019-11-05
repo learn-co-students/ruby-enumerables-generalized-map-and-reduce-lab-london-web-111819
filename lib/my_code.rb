@@ -1,14 +1,14 @@
 require 'pry'
 
 def map(array)
-  i = 0 
   new_array = []
-  while i < array.length 
-    new_array << yield(array[i])
-    i += 1
+
+  for element in array
+    new_array.push yield element
   end
+
   new_array
-end 
+end
 
 def reduce (array,starting_point=nil)
   if starting_point
